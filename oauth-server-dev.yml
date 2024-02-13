@@ -1,0 +1,31 @@
+spring:
+  eureka:
+    instance:
+      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    client:
+      service-url:
+        defaultZone: http://servicio-eureka-server:8761/eureka
+
+
+
+server:
+  port: ${PORT:0}
+  
+  
+
+springdoc:
+  api-docs:
+    path: /swagger-doc/v3/api-docs
+    groups:
+      enabled: true
+  swagger-ui:
+    path: /swagger-doc/swagger-ui.html
+
+management:
+  tracing:
+    enabled: false
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: https://zipkin-trace.onrender.com
