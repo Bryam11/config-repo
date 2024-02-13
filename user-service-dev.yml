@@ -27,3 +27,12 @@ springdoc:
       enabled: true
   swagger-ui:
     path: /swagger-doc/swagger-ui.html
+
+management:
+  tracing:
+    enabled: false
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: https://zipkin-trace.onrender.com
