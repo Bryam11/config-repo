@@ -10,7 +10,15 @@ spring:
 
 server:
   port: ${PORT:0}
-  
+
+config:
+  security:
+    oauth:
+      client:
+        id: frontendapp
+        secret: 12345
+      jwt:
+        key: algun_codigo_secreto_aeiou
   
 
 springdoc:
