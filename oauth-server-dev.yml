@@ -44,4 +44,4 @@ management:
       
 security:
   jwt:
-    secret-key: QnJ5YW06Q2h1Y2h1Y2E=
+    secret-key: QnJoeWFudDpDaHVjaHVjYTE0OTQzMjAxMDUxNDQzNDk=
