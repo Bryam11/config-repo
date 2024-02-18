@@ -1,0 +1,44 @@
+spring:
+  eureka:
+    instance:
+      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    client:
+      service-url:
+        defaultZone: http://servicio-eureka-server:8761/eureka
+  cloud:
+    gateway:
+      routes:
+        - id: oauth-server
+          uri: lb://oauth-server
+          predicates:
+            - Path=/api/oauth/**
+            - StripPrefix=2
+            - EjemploCookie=Hola mi mensaje personalizado, usuario, AndresGuzman
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/user/**
+          filters:
+            - StripPrefix=2
+            - AddRequestHeader=token-request, 123456
+            - AddResponseHeader=token-response, 12345678
+            - SetResponseHeader=Content-Type, text/plain
+            - AddRequestParameter=nombre, andres
+server:
+  port: ${PORT:0}
+  
+  
+
+
+management:
+  tracing:
+    enabled: false
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+  zipkin:
+    tracing:
+      endpoint: https://zipkin-trace.onrender.com
