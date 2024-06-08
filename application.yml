@@ -1,0 +1,19 @@
+app:
+  error:
+    details: 0
+  zurich:
+    message:
+      code:
+#Mensajes generales
+        '000': OK
+        '001': Error no identificado, contacte con el administrador
+        '002': Ning\u00fa resultado para mostrar
+        '003': Servicio no habilitado
+        '004': Petici\u000f3n incorrecta
+        '005': Trazabilidad no configurada
+        '006': Error al consumir el servicio %s
+        '007': Operacion no permitida
+        '008': Error en proceso batch
+#Mensajes para contable
+        '100': C\u00f3digo contable no encontrado
+
