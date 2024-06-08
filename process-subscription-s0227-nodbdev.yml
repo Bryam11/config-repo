@@ -1,0 +1,26 @@
+server:
+  port: 9000
+
+spring:
+  webflux:
+    base-path: ${application.path}/process/subscription
+
+api:
+  billing_creation:
+    url: http://10.113.84.20:8000/zurich/api/billing-creation-s0205/v1
+  endorsement_item:
+    url: http://10.113.84.20:8000/zurich/api/endorsement-item-s0206/v1
+  entity:
+    url: http://10.113.84.20:8000/zurich/api/entityManagement/v1
+  item:
+    url: http://10.113.84.20:8000/zurich/api/item-s0209/v1
+  policy:
+    url: http://10.113.84.20:8000/zurich/api/policy-s0210/v1
+  policy_management:
+    url: http://10.113.84.20:8000/zurich/api/policy/policymanagement/v1.0
+  suscription_data:
+    url: http://10.113.84.20:8000/zurich/api/suscription-data-s0214/v1
+  validation_hub:
+    url: http://10.113.84.20:8000/zurich/api/validation-hub-s0232/v1
+    
+    
